@@ -25,7 +25,7 @@ module.exports = (app) => {
   });
 
   app.get("api/notes", (req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     notesInfo.push(req.body);
     res.json(true);
     
@@ -35,6 +35,32 @@ module.exports = (app) => {
     notesInfo.push(req.body);
     fs.writeFileSync("./db/db.json", JSON.stringify(notesInfo), "UTF-8");
     res.json(true);
+  });
+
+  // app.delete("api/notes/:id", (req,res) => {
+  //   const idNum = req.params.id;
+  //   let note = notesInfo.filter(note => {
+  //     return note.id === idNum;
+  //   })[0];
+  //   const idIndex = notesInfo.indexOf(note);
+  //   notesInfo.splice(idIndex, 1);
+  //   fs.writeFileSync("./db/db.json", JSON.stringify(notesInfo), "UTF-8");
+  //   res.json("Notes deleted");
+  // });
+
+  app.delete("/api/notes/:id", function(req, res) {
+    const newID = req.params.id;
+
+    let note = notesInfo.filter(note => {
+      return note.id === newID;
+    })[0];
+
+    const idIndex = notesInfo.indexOf(note);
+
+    notesInfo.splice(idIndex, 1);
+
+    fs.writeFileSync("./db/db.json", JSON.stringify(notesInfo), "utf8");
+    res.json("Note deleted");
   });
 
 };

@@ -14,7 +14,7 @@ app.use(express.json());
 //built in middleware to serve static file in express.js
 app.use(express.static("public"));
 
-//importing routes.js file
+//importing routes.js file 
 apiRoute(app);
 htmlRoute(app);
 
