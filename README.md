@@ -35,6 +35,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ## Mock-Up
 
 The following images show the web application's appearance and functionality: 
+![Note-taker1](https://user-images.githubusercontent.com/72904217/107186919-1c3a1b80-6a20-11eb-9f6e-64d58d37f4c7.PNG) <br  />
+![Note-taker2](https://user-images.githubusercontent.com/72904217/107186927-1f350c00-6a20-11eb-93fb-53325e8c66ed.PNG)
 
 
 ## Link to Video
